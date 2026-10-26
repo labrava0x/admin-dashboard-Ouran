@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ouran Host Club — Kyoya's Administrative Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Falling Rose Petals -->
+  <div class="petal">🌹</div>
+  <div class="petal">🌸</div>
+  <div class="petal">🌹</div>
+  <div class="petal">✨</div>
+  <div class="petal">🌹</div>
+  <div class="petal">🌸</div>
+
+  <div class="dashboard-grid">
+    
+    <!-- Sidebar / Odin-Inspired Navigation Suite -->
+    <aside class="sidebar">
+      <div>
+        <div class="brand">
+          <span class="logo">🎛️</span>
+          <h1>Dashboard</h1>
+        </div>
+        <p class="sidebar-sub">Third Music Room Admin</p>
+        
+        <nav class="nav-links">
+          <ul>
+            <li class="active"><a href="#">🏠 Home</a></li>
+            <li><a href="#">👤 Profile</a></li>
+            <li><a href="#messaging-section">💬 Messages</a></li>
+            <li><a href="#">⏱️ History</a></li>
+            <li><a href="#">📋 Tasks</a></li>
+            <li><a href="#">👥 Communities</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-divider"></div>
+
+        <nav class="nav-links">
+          <ul>
+            <li><a href="#">⚙️ Settings</a></li>
+            <li><a href="#">❓ Support</a></li>
+            <li><a href="#">🛡️ Privacy</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Kyoya's Profile at the bottom of the sidebar -->
+      <div class="sidebar-profile">
+        <div class="user-profile-group">
+          <div class="avatar-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          </div>
+          <div class="user-badge">
+            <span class="user-name">Kyoya Ootori</span>
+            <span class="user-role-sub">Admin</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Header / Tamaki's Stage -->
+    <header class="header">
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" placeholder="Search merchandise, revenue, or client profiles...">
+      </div>
+      
+      <div class="header-actions">
+        <!-- New & Upload Action Buttons -->
+        <button class="action-pill-btn" title="Create New Ledger Entry">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          <span>New</span>
+        </button>
+        <button class="action-pill-btn" title="Upload Financial Document">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+          <span>Upload</span>
+        </button>
+
+        <!-- Notification Bell -->
+        <button class="icon-btn notification-btn" title="Host Club Alerts">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          <span class="badge-dot"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Dashboard Content Area -->
+    <main class="main-content">
+      
+      <section class="welcome-banner">
+        <h2>Ledger Status: Highly Profitable 🌹✨</h2>
+        <p>All host expenditures are logged, interests are compounding, and Tamaki’s theatrical budget remains strictly monitored. Proceed with fiscal discipline.</p>
+      </section>
+
+      <div class="dashboard-content-layout">
+        <!-- Left Column: Metric Cards Grid & Messaging Suite -->
+        <div class="left-column-stack">
+          <div class="card-demo-grid">
+            <!-- 1. Monthly Merch Revenue -->
+            <article class="card">
+              <div class="card-body">
+                <h3>Monthly Merch Revenue</h3>
+                <p class="stat">¥12,450,000</p>
+                <small class="card-sub highlight-gold">+18.5% target exceeded 🌹✨</small>
+              </div>
+              <div class="card-actions">
+                <button class="icon-btn" title="Pin Metric"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></button>
+                <button class="icon-btn" title="Audit Details"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+                <button class="icon-btn" title="Export Log"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg></button>
+              </div>
+            </article>
+
+            <!-- 2. VIP Client Count -->
+            <article class="card">
+              <div class="card-body">
+                <h3>VIP Client Count</h3>
+                <p class="stat">1,420 Active</p>
+                <small class="card-sub">Retention rate: 94.2% 🌹✨</small>
+              </div>
+              <div class="card-actions">
+                <button class="icon-btn" title="Pin Metric"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></button>
+                <button class="icon-btn" title="Audit Details"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+                <button class="icon-btn" title="Export Log"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg></button>
+              </div>
+            </article>
+
+            <!-- 3. Honey-Sempai's Cake Expense -->
+            <article class="card">
+              <div class="card-body">
+                <h3>Honey-Sempai's Cake Expense</h3>
+                <p class="stat">¥450,000</p>
+                <small class="card-sub highlight-rose">Strawberry shortcake & tea deficit 🌹✨</small>
+              </div>
+              <div class="card-actions">
+                <button class="icon-btn" title="Pin Metric"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></button>
+                <button class="icon-btn" title="Audit Details"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+                <button class="icon-btn" title="Export Log"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg></button>
+              </div>
+            </article>
+
+            <!-- 4. Tamaki's Rose & Merch Budget -->
+            <article class="card">
+              <div class="card-body">
+                <h3>Tamaki's Rose & Merch Budget</h3>
+                <p class="stat">¥3,800,000</p>
+                <small class="card-sub highlight-gold">100% theatrical ROI 🌹✨</small>
+              </div>
+              <div class="card-actions">
+                <button class="icon-btn" title="Pin Metric"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></button>
+                <button class="icon-btn" title="Audit Details"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+                <button class="icon-btn" title="Export Log"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg></button>
+              </div>
+            </article>
+
+            <!-- 5. Hitachiin Twins Prank Ledger -->
+            <article class="card">
+              <div class="card-body">
+                <h3>Hitachiin Twins Prank Ledger</h3>
+                <p class="stat">¥1,250,000</p>
+                <small class="card-sub highlight-rose">Costume & prop damages 🌹✨</small>
+              </div>
+              <div class="card-actions">
+                <button class="icon-btn" title="Pin Metric"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></button>
+                <button class="icon-btn" title="Audit Details"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+                <button class="icon-btn" title="Export Log"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg></button>
+              </div>
+            </article>
+
+            <!-- 6. Haruhi's Vase Debt Balance -->
+            <article class="card">
+              <div class="card-body">
+                <h3>Haruhi's Vase Debt Balance</h3>
+                <p class="stat">¥8,000,000</p>
+                <small class="card-sub">Reducing via active host labor 🌹✨</small>
+              </div>
+              <div class="card-actions">
+                <button class="icon-btn" title="Pin Metric"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></button>
+                <button class="icon-btn" title="Audit Details"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+                <button class="icon-btn" title="Export Log"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg></button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Host Messaging Center -->
+          <section id="messaging-section" class="messaging-panel">
+            <h3>💬 Host Club Member Dispatch 🌹✨</h3>
+            <p class="panel-sub">Send direct administrative directives or warnings to active hosts via LINE.</p>
+            <form class="messaging-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="recipient">Select Host</label>
+                  <select id="recipient" class="form-input">
+                    <option value="tamaki">Tamaki Suoh (President)</option>
+                    <option value="honey">Mitsukuni "Honey" Haninozuka</option>
+                    <option value="mori">Takashi Morinozuka</option>
+                    <option value="hikaru">Hikaru Hitachiin</option>
+                    <option value="kaoru">Kaoru Hitachiin</option>
+                    <option value="haruhi">Haruhi Fujioka</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="channel">Protocol / App</label>
+                  <select id="channel" class="form-input">
+                    <option value="line">LINE App (Official Host Chat)</option>
+                    <option value="whatsapp">WhatsApp Business</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message-body">Directive Content</label>
+                <textarea id="message-body" class="form-textarea" rows="3" placeholder="Type your directive here (e.g., 'Your rose budget has been restricted. Report to the Music Room immediately.')"></textarea>
+              </div>
+              <button type="submit" class="primary-btn">Dispatch Message 🌹</button>
+            </form>
+          </section>
+        </div>
+
+        <!-- Right Column: Announcements & Trending Host Gossip -->
+        <div class="side-panels-grid">
+          <section class="panel announcements-panel">
+            <h3>Host Club Announcements 🌹✨</h3>
+            <div class="announcement-item">
+              <h4>Tamaki's Rose Budget Audit</h4>
+              <p>Mandatory review of theatrical expenditures following unauthorized rose purchases.</p>
+            </div>
+            <hr class="panel-divider">
+            <div class="announcement-item">
+              <h4>New Tea Blend Arrival</h4>
+              <p>Honey-sempai has approved the new imported Mauritian tea selection.</p>
+            </div>
+            <hr class="panel-divider">
+            <div class="announcement-item">
+              <h4>Vase Repayment Schedule</h4>
+              <p>Haruhi Fujioka's monthly labor shift allocation has been updated.</p>
+            </div>
+          </section>
+
+          <section class="panel trending-panel">
+            <h3>Trending Host Gossip 🌹✨</h3>
+            <div class="trending-item">
+              <span class="trend-rank">01</span>
+              <div class="trend-info">
+                <strong>Hikaru & Kaoru</strong>
+                <small>New matching uniform prank rollout</small>
+              </div>
+            </div>
+            <div class="trending-item">
+              <span class="trend-rank">02</span>
+              <div class="trend-info">
+                <strong>Kyoya Ootori</strong>
+                <small>Q3 camera surveillance upgrade approved</small>
+              </div>
+            </div>
+            <div class="trending-item">
+              <span class="trend-rank">03</span>
+              <div class="trend-info">
+                <strong>Muzukashi High VIPs</strong>
+                <small>Reservation requests up 24%</small>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+  </div>
+</body>
+</html>

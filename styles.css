@@ -1,0 +1,582 @@
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap');
+
+/* The Third Music Room — Falling Petals Salon Suite */
+
+:root {
+  --ouran-rose-dream: #fff0f3;
+  --ouran-uniform-blue: #3a3b5c; /* Official Ouran Academy uniform lavender-blue */
+  --ouran-deep-wine: #280d19;
+  --ouran-gold-hair: #facc15;
+  --ouran-tamaki-eyes: #7c3aed; /* Exact luminous violet from Tamaki's eyes! */
+  --ouran-crimson-rose: #be123c;
+  --ouran-card-bg: #ffffff;
+  --ouran-text: #271520;
+  --ouran-muted: #886072;
+  --ouran-border: #fbcfe8;
+  --ouran-shadow: 0 15px 35px -5px rgba(190, 18, 60, 0.08), 0 5px 15px rgba(124, 58, 237, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--ouran-rose-dream);
+  color: var(--ouran-text);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* True Background Rose Frame Layer pinned to the window */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  border: 28px solid transparent;
+  border-image: url('images/rose-frame.svg') 36 round;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Falling Rose Petal Animations */
+.petal {
+  position: fixed;
+  top: -10vh;
+  z-index: 9999;
+  user-select: none;
+  pointer-events: none;
+  font-size: 1.2rem;
+  opacity: 0.75;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0.8; }
+  50% { transform: translateY(50vh) translateX(40px) rotate(180deg); opacity: 0.9; }
+  100% { transform: translateY(110vh) translateX(-30px) rotate(360deg); opacity: 0; }
+}
+
+.petal:nth-child(1) { left: 10%; animation-duration: 7s; animation-delay: 0s; font-size: 1.4rem; }
+.petal:nth-child(2) { left: 25%; animation-duration: 9s; animation-delay: 2s; font-size: 1rem; }
+.petal:nth-child(3) { left: 40%; animation-duration: 6s; animation-delay: 1s; font-size: 1.6rem; }
+.petal:nth-child(4) { left: 60%; animation-duration: 8s; animation-delay: 3s; font-size: 1.2rem; }
+.petal:nth-child(5) { left: 75%; animation-duration: 10s; animation-delay: 0.5s; font-size: 1.5rem; }
+.petal:nth-child(6) { left: 90%; animation-duration: 7s; animation-delay: 4s; font-size: 1.1rem; }
+
+/* Grand Dashboard Grid Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  grid-template-rows: 90px 1fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Sidebar */
+.sidebar {
+  grid-area: sidebar;
+  background: linear-gradient(180deg, var(--ouran-deep-wine) 0%, var(--ouran-uniform-blue) 100%);
+  color: #fff1f2;
+  padding: 2.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  border-right: 3px solid var(--ouran-gold-hair);
+  box-shadow: 8px 0 35px rgba(40, 13, 25, 0.35);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.brand h1 {
+  font-size: 1.35rem;
+  color: var(--ouran-gold-hair);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-family: 'Yuji Boku', serif;
+}
+
+.sidebar-sub {
+  font-size: 0.75rem;
+  color: #e2e8f0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+}
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.nav-links a {
+  color: #f1f5f9;
+  text-decoration: none;
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  display: block;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-links li.active a,
+.nav-links a:hover {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.3) 0%, rgba(190, 18, 60, 0.35) 100%);
+  color: var(--ouran-gold-hair);
+  border-color: var(--ouran-gold-hair);
+  transform: translateX(6px);
+}
+
+/* Sidebar Profile Bottom Dock */
+.sidebar-profile {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.user-profile-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.avatar-icon {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, var(--ouran-tamaki-eyes), var(--ouran-deep-wine));
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
+  flex-shrink: 0;
+}
+
+.user-badge {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-profile .user-name {
+  font-weight: 700;
+  color: var(--ouran-gold-hair);
+  font-size: 0.95rem;
+}
+
+.user-role-sub {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Header */
+.header {
+  grid-area: header;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 2px solid var(--ouran-border);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 4px 20px rgba(190, 18, 60, 0.05);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  max-width: 380px;
+  background: rgba(255, 250, 243, 0.9);
+  border: 1px solid var(--ouran-border);
+  border-radius: 30px;
+  padding: 0.5rem 1.25rem;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-family: inherit;
+  color: var(--ouran-text);
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.search-icon {
+  color: var(--ouran-muted);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.notification-btn {
+  position: relative;
+  background: rgba(255, 240, 243, 0.8);
+  border: 1px solid var(--ouran-border);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--ouran-text);
+  transition: all 0.2s ease;
+}
+
+.notification-btn:hover {
+  background: var(--ouran-rose-dream);
+  color: var(--ouran-crimson-rose);
+}
+
+.badge-dot {
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  background: var(--ouran-crimson-rose);
+  border-radius: 50%;
+}
+
+/* Main Content Area */
+.main-content {
+  grid-area: main;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.welcome-banner {
+  background: linear-gradient(135deg, #ffffff 0%, #fff1f3 100%);
+  padding: 2.25rem 2.5rem;
+  border-radius: 20px;
+  border: 2px solid var(--ouran-gold-hair);
+  box-shadow: var(--ouran-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-banner h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--ouran-crimson-rose);
+  font-weight: 800;
+  font-family: 'Yuji Boku', serif;
+  letter-spacing: 0.03em;
+}
+
+.welcome-banner p {
+  color: var(--ouran-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Split Content Grid (Cards Left, Panels Right) */
+.dashboard-content-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.left-column-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card-demo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--ouran-card-bg);
+  padding: 1.75rem;
+  border-radius: 20px;
+  border: 1px solid var(--ouran-border);
+  box-shadow: var(--ouran-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 190px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--ouran-tamaki-eyes);
+  box-shadow: 0 20px 40px rgba(124, 58, 237, 0.15);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--ouran-gold-hair), var(--ouran-crimson-rose), var(--ouran-tamaki-eyes));
+}
+
+.card h3 {
+  font-size: 0.9rem;
+  color: var(--ouran-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+  font-family: 'Yuji Boku', serif;
+}
+
+.stat {
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: var(--ouran-tamaki-eyes);
+}
+
+.card small,
+.card .card-sub {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ouran-muted);
+}
+
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--ouran-border);
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ouran-muted);
+  padding: 0.35rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.icon-btn:hover {
+  color: var(--ouran-tamaki-eyes);
+  background: rgba(124, 58, 237, 0.08);
+  transform: scale(1.15);
+}
+
+/* Side Panels */
+.side-panels-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.panel, .messaging-panel {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--ouran-border);
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: var(--ouran-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.panel::before, .messaging-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--ouran-gold-hair), var(--ouran-crimson-rose), var(--ouran-tamaki-eyes));
+}
+
+.panel h3, .messaging-panel h3 {
+  color: var(--ouran-crimson-rose);
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  font-family: 'Yuji Boku', serif;
+}
+
+.announcement-item h4 {
+  font-size: 0.95rem;
+  color: var(--ouran-text);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  font-family: 'Yuji Boku', serif;
+}
+
+.announcement-item p {
+  font-size: 0.825rem;
+  color: var(--ouran-muted);
+  line-height: 1.4;
+}
+
+.panel-divider {
+  border: none;
+  border-top: 1px dashed var(--ouran-border);
+  margin: 0.85rem 0;
+}
+
+.trending-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.4rem 0;
+}
+
+.trend-rank {
+  font-weight: 800;
+  color: var(--ouran-gold-hair);
+  font-size: 1.1rem;
+}
+
+.trend-info strong {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--ouran-text);
+}
+
+.trend-info small {
+  font-size: 0.78rem;
+  color: var(--ouran-muted);
+}
+
+/* Odin Template Action Buttons & Messaging */
+.nav-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin: 1rem 0;
+}
+
+.action-pill-btn {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(190, 18, 60, 0.15));
+  border: 1px solid var(--ouran-border);
+  color: var(--ouran-crimson-rose);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.action-pill-btn:hover {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.25), rgba(190, 18, 60, 0.25));
+  border-color: var(--ouran-tamaki-eyes);
+  transform: translateY(-2px);
+}
+
+.panel-sub {
+  font-size: 0.85rem;
+  color: var(--ouran-muted);
+  margin-bottom: 1.25rem;
+}
+
+.messaging-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ouran-muted);
+}
+
+.form-input, .form-textarea, select.form-input {
+  padding: 0.65rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--ouran-border);
+  background: #fffbfa;
+  color: var(--ouran-text);
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  width: 100%;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.form-input:focus, .form-textarea:focus {
+  border-color: var(--ouran-tamaki-eyes);
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.15);
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--ouran-deep-wine), var(--ouran-tamaki-eyes));
+  color: #fff;
+  border: none;
+  padding: 0.85rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+  align-self: flex-start;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(190, 18, 60, 0.35);
+}
